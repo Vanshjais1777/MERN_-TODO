@@ -4,8 +4,8 @@ import axios from "axios";
 import { baseURL } from './utils/constant';
 
 const App = () => {
-  const [toDos, setTodos] = useState([])
-  const [input, setInput] = useState("")
+  const [toDos, setTodos] = useState([]);
+  const [input, setInput] = useState("");
   useEffect(() => {
     axios
       .get(`${baseURL}/get`)
@@ -14,13 +14,14 @@ const App = () => {
   }, []);
 
   const saveToDo = () => {
-    axios.post(`${baseURL}/save`, { ToDo: input }).then(res => {
-      console.log(res.data);
-      setInput("")
-        .catch((err) => console.log(err));
-
-    })
-  }
+    axios
+      .post(`${baseURL}/;save`, { toDo: input })
+      .then((res) => {
+        console.log(res.data);
+        setInput("");
+      })
+      .catch((err) => console.log(err));
+  };
   return (
     <main>
       <div className='container'>
